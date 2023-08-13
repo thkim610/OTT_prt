@@ -7,7 +7,8 @@ public class Run {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		OTTArchive o = new OTTArchive();
-		OTT ott = new OTT(o);
+		User u = new User(123, "kim");
+		OTT ott = new OTT(o, u);
 
 		while (true) {
 
@@ -35,14 +36,20 @@ public class Run {
 			//시리즈 컨텐츠
 			} else if (num == 3) {
 				ott.seriesContents();
+			//관심목록 컨텐츠
+			} else if(num == 4){
+				ott.favoriteContents();
 			}
 			
 			//선택한 컨텐츠 세부내용 보여주기
 			System.out.println("보고 싶은 컨텐츠의 번호를 입력해주세요.");
 			contentsNum = sc.nextInt();
-			ott.detailContent(contentsNum);
+			Contents selectContents =  ott.detailContent(contentsNum);
 			
-			
+			int favorNum = sc.nextInt();
+			if(favorNum == 0) {
+				selectContents.addfContents();
+			}
 		}
 
 		sc.close();

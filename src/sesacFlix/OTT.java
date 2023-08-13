@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class OTT {
 
 	protected OTTArchive otA;
@@ -11,9 +12,11 @@ public class OTT {
 	List<String> cIdList = new LinkedList<String>();
 	List<String> mIdList = new LinkedList<String>();
 	int contentNum;
+	User user;
 
-	public OTT(OTTArchive otA) {
+	public OTT(OTTArchive otA, User user) {
 		this.otA = otA;
+		this.user = user;
 	}
 
 	//아카이브에서 컨텐츠 Id를 가져와 리스트로 저장
@@ -43,6 +46,7 @@ public class OTT {
 	void rankContents() {
 		setcList();
 
+		contentList.clear(); // contentList에 담긴 콘텐츠들을 비움.
 		for (int i = 0; i < otA.contentM.size(); i++) {
 			String key;
 			key = cIdList.get(i);
@@ -63,6 +67,7 @@ public class OTT {
 	void movieContents() {
 		setcList();
 
+		contentList.clear(); // contentList에 담긴 콘텐츠들을 비움.
 		for (int i = 0; i < otA.contentM.size(); i++) {
 			String key;
 			if (otA.contentM.get(cIdList.get(i)).get("type").equals("영화")) {
@@ -85,6 +90,7 @@ public class OTT {
 	void seriesContents() {
 		setcList();
 
+		contentList.clear(); // contentList에 담긴 콘텐츠들을 비움.
 		for (int i = 0; i < otA.contentM.size(); i++) {
 			String key;
 			if (otA.contentM.get(cIdList.get(i)).get("type").equals("시리즈")) {
@@ -103,9 +109,26 @@ public class OTT {
 		showContentsList();
 
 	}
+	
+	//관심 컨텐츠 목록 
+	void favoriteContents() {
+		contentList.clear(); // contentList에 담긴 콘텐츠들을 비움.
+		for(int i=0; i<user.favorite.size();i++) {
+			String key;
+			key = user.favorite.get(i); //User 클래스에 담긴 콘텐츠Id를 하나씩 가져옴.
+			Contents c = new Contents(otA, key); // 콘텐츠Id를 통해 콘텐츠 인스턴스 가져옴.
+			
+			this.contentList.add(c); //리스트에 콘텐츠 인스턴스를 저장
+		}
+		
+		Collections.sort(contentList);
+		
+		System.out.println("관심목록 컨텐츠");
+		showContentsList();
+	}
 
-	//컨테츠 번호 입력 시, 세부내용 보여줌. 
-	void detailContent(int contentNum) {
+	//컨텐츠 번호 입력 시, 세부내용 보여줌. 
+	Contents detailContent(int contentNum) {
 		this.contentNum = contentNum - 1;
 		Contents detailList = contentList.get(this.contentNum);
 
@@ -117,16 +140,23 @@ public class OTT {
 		System.out.println(detailList.type);
 		System.out.println(0+". 찜하기");
 		System.out.println();
+		
+		
 
 		if (detailList.type.equals("영화")) {
 
 			Movie m = new Movie(otA, detailList.cId);
+			m.setOnFavorite(user);
 			m.movieInfo();
+			return m;
 		} else if (detailList.type.equals("시리즈")) {
 			Series s = new Series(otA, detailList.cId);
+			s.setOnFavorite(user);
 			s.seriesInfo();
 
+			return s;
 		}
+		return detailList;
 
 	}
 

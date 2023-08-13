@@ -16,6 +16,7 @@ public class Contents implements Comparable<Contents>{
 	protected int views;
 	protected String type;
 	protected List<String> medias;
+	protected OnFavorite onFavorite;
 	
 	
 	public Contents(OTTArchive otA, String key) {
@@ -30,6 +31,21 @@ public class Contents implements Comparable<Contents>{
 		this.medias = (List<String>) otA.contentM.get(key).get("medias");
 	}
 
+	//찜 목록 추가기능 인터페이스
+	public interface OnFavorite{
+		void addFavorite(String key);
+	}
+	
+	public void setOnFavorite(OnFavorite onFavorite) {
+		this.onFavorite = onFavorite;
+	}
+	
+	// 콘텐츠 찜하기 기능
+	void addfContents() {
+		onFavorite.addFavorite(cId);
+		System.out.println(title+"(이)가 찜 목록에 추가되었습니다.");
+	}
+	
 	@Override
 	public int compareTo(Contents contents) {
         if (contents.views > views) {
