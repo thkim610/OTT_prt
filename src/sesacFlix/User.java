@@ -7,16 +7,16 @@ public class User implements Contents.OnFavorite{
 
 	int userId;
 	String userName;
-	List<String>favorite; // ÂòÇÑ ÄÁÅÙÃ÷ÀÇ cId¸¦ ÀúÀå
+	List<String>favorite; // ì°œí•œ ì»¨í…ì¸ ì˜ cIdë¥¼ ì €ì¥
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public User(int userId, String userName) {
 		this.userId = userId;
 		this.userName = userName;
 		favorite = new ArrayList<String>();
 	}
 
-	// ÂòÇÑ ÄÁÅÙÃ÷ÀÇ ÄÁÅÙÃ÷Id ¸®½ºÆ®¿¡ Ãß°¡
+	// ì°œí•œ ì»¨í…ì¸ ì˜ ì»¨í…ì¸ Id ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
 	@Override
 	public void addFavorite(String key) {
 		favorite.add(key);

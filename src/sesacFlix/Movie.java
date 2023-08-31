@@ -17,13 +17,13 @@ public class Movie extends Contents{
 		
 		
 		System.out.println("1.------------");
-		System.out.println("º»Æí ¿µ»ó");
-		System.out.println("Á¦¸ñ: "+ otA.mediaM.get(movieId).get("title"));
-		System.out.println("¿µ»ó½Ã°£: "+ otA.mediaM.get(movieId).get("time"));
+		System.out.println("ë³¸í¸ ì˜ìƒ");
+		System.out.println("ì œëª©: "+ otA.mediaM.get(movieId).get("title"));
+		System.out.println("ì˜ìƒì‹œê°„: "+ otA.mediaM.get(movieId).get("time"));
 		System.out.println("2.------------");
-		System.out.println("¿¹°íÆí ¿µ»ó");
-		System.out.println("Á¦¸ñ: "+ otA.mediaM.get(prevId).get("title"));
-		System.out.println("¿µ»ó½Ã°£: "+ otA.mediaM.get(prevId).get("time"));
+		System.out.println("ì˜ˆê³ í¸ ì˜ìƒ");
+		System.out.println("ì œëª©: "+ otA.mediaM.get(prevId).get("title"));
+		System.out.println("ì˜ìƒì‹œê°„: "+ otA.mediaM.get(prevId).get("time"));
 		System.out.println();
 		
 		

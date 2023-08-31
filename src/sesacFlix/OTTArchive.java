@@ -55,7 +55,7 @@ public class OTTArchive {
 	
 	private List<String[]> readContentBase() {
 		try {
-			FileReader fr = new FileReader("./ÄÁÅÙÃ÷±âº».txt");
+			FileReader fr = new FileReader("./ì»¨í…ì¸ ê¸°ë³¸.txt");
 			BufferedReader bin = new BufferedReader(fr);
 			
 			List<String[]> list = new ArrayList<>();
@@ -76,7 +76,7 @@ public class OTTArchive {
 	
 	private List<String> readCast() {
 		try {
-			FileReader fr = new FileReader("./ÄÁÅÙÃ÷Ãâ¿¬.txt");
+			FileReader fr = new FileReader("./ì»¨í…ì¸ ì¶œì—°.txt");
 			BufferedReader bin = new BufferedReader(fr);
 			List<String> list = new ArrayList<>();
 			while(true) {
@@ -95,7 +95,7 @@ public class OTTArchive {
 	
 	private List<String> readSummary() {
 		try {
-			FileReader fr = new FileReader("./ÄÁÅÙÃ÷ÁÙ°Å¸®.txt");
+			FileReader fr = new FileReader("./ì»¨í…ì¸ ì¤„ê±°ë¦¬.txt");
 			BufferedReader bin = new BufferedReader(fr);
 			List<String> list = new ArrayList<>();
 			while(true) {
@@ -114,7 +114,7 @@ public class OTTArchive {
 	
 	private List<String[]> readMedia() {
 		try {
-			FileReader fr = new FileReader("./¿µ»ó.txt");
+			FileReader fr = new FileReader("./ì˜ìƒ.txt");
 			BufferedReader bin = new BufferedReader(fr);
 			
 			List<String[]> list = new ArrayList<>();

@@ -17,9 +17,9 @@ public class Series extends Contents{
 		
 		for(int i=0; i<seriesId.size(); i++) {
 			System.out.println(i+1+".------------------");
-			System.out.println(i+1+"È¸ ¿µ»ó");
-			System.out.println("½Ã¸®Áî Á¦¸ñ: "+otA.mediaM.get(seriesId.get(i)).get("title"));
-			System.out.println("¿µ»ó½Ã°£: "+ otA.mediaM.get(seriesId.get(i)).get("time"));
+			System.out.println(i+1+"íšŒ ì˜ìƒ");
+			System.out.println("ì‹œë¦¬ì¦ˆ ì œëª©: "+otA.mediaM.get(seriesId.get(i)).get("title"));
+			System.out.println("ì˜ìƒì‹œê°„: "+ otA.mediaM.get(seriesId.get(i)).get("time"));
 			System.out.println();
 		}
 		

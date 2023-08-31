@@ -12,37 +12,37 @@ public class Run {
 
 		while (true) {
 
-			System.out.println("¸Ş´º¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä.");
-			System.out.println("1. ÄÁÅÙÃ÷ ¼øÀ§");
-			System.out.println("2. ¿µÈ­ ÄÁÅÙÃ÷");
-			System.out.println("3. ½Ã¸®Áî ÄÁÅÙÃ÷");
-			System.out.println("4. °ü½É¸ñ·Ï ÄÁÅÙÃ÷");
-			System.out.println("0. Á¾·á");
+			System.out.println("ë©”ë‰´ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”.");
+			System.out.println("1. ì»¨í…ì¸  ìˆœìœ„");
+			System.out.println("2. ì˜í™” ì»¨í…ì¸ ");
+			System.out.println("3. ì‹œë¦¬ì¦ˆ ì»¨í…ì¸ ");
+			System.out.println("4. ê´€ì‹¬ëª©ë¡ ì»¨í…ì¸ ");
+			System.out.println("0. ì¢…ë£Œ");
 
 			int num = sc.nextInt();
 			int contentsNum;
 
 			if (num == 0) {
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 				break;
 			}
 
-			//ÄÁÅÙÃ÷ ¼øÀ§
+			//ì»¨í…ì¸  ìˆœìœ„
 			if (num == 1) {
 				ott.rankContents();
-			//¿µÈ­ ÄÁÅÙÃ÷
+			//ì˜í™” ì»¨í…ì¸ 
 			} else if (num == 2) {
 				ott.movieContents();
-			//½Ã¸®Áî ÄÁÅÙÃ÷
+			//ì‹œë¦¬ì¦ˆ ì»¨í…ì¸ 
 			} else if (num == 3) {
 				ott.seriesContents();
-			//°ü½É¸ñ·Ï ÄÁÅÙÃ÷
+			//ê´€ì‹¬ëª©ë¡ ì»¨í…ì¸ 
 			} else if(num == 4){
 				ott.favoriteContents();
 			}
 			
-			//¼±ÅÃÇÑ ÄÁÅÙÃ÷ ¼¼ºÎ³»¿ë º¸¿©ÁÖ±â
-			System.out.println("º¸°í ½ÍÀº ÄÁÅÙÃ÷ÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			//ì„ íƒí•œ ì»¨í…ì¸  ì„¸ë¶€ë‚´ìš© ë³´ì—¬ì£¼ê¸°
+			System.out.println("ë³´ê³  ì‹¶ì€ ì»¨í…ì¸ ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			contentsNum = sc.nextInt();
 			Contents selectContents =  ott.detailContent(contentsNum);
 			

@@ -31,7 +31,7 @@ public class Contents implements Comparable<Contents>{
 		this.medias = (List<String>) otA.contentM.get(key).get("medias");
 	}
 
-	//Âò ¸ñ·Ï Ãß°¡±â´É ÀÎÅÍÆäÀÌ½º
+	//ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½
 	public interface OnFavorite{
 		void addFavorite(String key);
 	}
@@ -40,10 +40,10 @@ public class Contents implements Comparable<Contents>{
 		this.onFavorite = onFavorite;
 	}
 	
-	// ÄÜÅÙÃ÷ ÂòÇÏ±â ±â´É
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½
 	void addfContents() {
 		onFavorite.addFavorite(cId);
-		System.out.println(title+"(ÀÌ)°¡ Âò ¸ñ·Ï¿¡ Ãß°¡µÇ¾ú½À´Ï´Ù.");
+		System.out.println(title+"(ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ï¿ï¿½ ï¿½ß°ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 	
 	@Override
@@ -56,4 +56,9 @@ public class Contents implements Comparable<Contents>{
         return 0;
     }
 	
+	private void sysout() {
+		// TODO Auto-generated method stub
+
+	}
+
 }

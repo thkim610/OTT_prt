@@ -19,34 +19,34 @@ public class OTT {
 		this.user = user;
 	}
 
-	//¾ÆÄ«ÀÌºê¿¡¼­ ÄÁÅÙÃ÷ Id¸¦ °¡Á®¿Í ¸®½ºÆ®·Î ÀúÀå
+	//ì•„ì¹´ì´ë¸Œì—ì„œ ì»¨í…ì¸  Idë¥¼ ê°€ì ¸ì™€ ë¦¬ìŠ¤íŠ¸ë¡œ ì €ì¥
 	void setcList() {
 		cIdList.addAll(otA.contentM.keySet());
 
 	}
 
-	//¾ÆÄ«ÀÌºê¿¡¼­ ¹Ìµğ¾î Id¸¦ °¡Á®¿Í ¸®½ºÆ®·Î ÀúÀå
+	//ì•„ì¹´ì´ë¸Œì—ì„œ ë¯¸ë””ì–´ Idë¥¼ ê°€ì ¸ì™€ ë¦¬ìŠ¤íŠ¸ë¡œ ì €ì¥
 	void setmList() {
 		mIdList.addAll(otA.mediaM.keySet());
 	}
 
-	//ÄÁÅÙÃ÷ÀÇ Á¦¸ñ, ÁÙ°Å¸®, Å¸ÀÔÀ» º¸¿©ÁÜ.
+	//ì»¨í…ì¸ ì˜ ì œëª©, ì¤„ê±°ë¦¬, íƒ€ì…ì„ ë³´ì—¬ì¤Œ.
 	void showContentsList() {
 		for (int i = 0; i < contentList.size(); i++) {
 			System.out.println(i + 1 + ".---------------------------");
-			System.out.println("Á¦¸ñ: " + contentList.get(i).title);
-			System.out.println("ÁÙ°Å¸®: " + contentList.get(i).summary);
+			System.out.println("ì œëª©: " + contentList.get(i).title);
+			System.out.println("ì¤„ê±°ë¦¬: " + contentList.get(i).summary);
 			System.out.println(contentList.get(i).type);
 			System.out.println(contentList.get(i).views);
 			System.out.println();
 		}
 	}
 
-	//ÄÁÅÙÃ÷ ¼øÀ§ ¸ñ·Ï(Á¶È¸¼ö ¼ø)
+	//ì»¨í…ì¸  ìˆœìœ„ ëª©ë¡(ì¡°íšŒìˆ˜ ìˆœ)
 	void rankContents() {
 		setcList();
 
-		contentList.clear(); // contentList¿¡ ´ã±ä ÄÜÅÙÃ÷µéÀ» ºñ¿ò.
+		contentList.clear(); // contentListì— ë‹´ê¸´ ì½˜í…ì¸ ë“¤ì„ ë¹„ì›€.
 		for (int i = 0; i < otA.contentM.size(); i++) {
 			String key;
 			key = cIdList.get(i);
@@ -58,19 +58,19 @@ public class OTT {
 
 		Collections.sort(contentList);
 
-		System.out.println("ÄÁÅÙÃ÷ ¼øÀ§!!");
+		System.out.println("ì»¨í…ì¸  ìˆœìœ„!!");
 		showContentsList();
 
 	}
 	
-	//¿µÈ­ ÄÁÅÙÃ÷ ¸ñ·Ï
+	//ì˜í™” ì»¨í…ì¸  ëª©ë¡
 	void movieContents() {
 		setcList();
 
-		contentList.clear(); // contentList¿¡ ´ã±ä ÄÜÅÙÃ÷µéÀ» ºñ¿ò.
+		contentList.clear(); // contentListì— ë‹´ê¸´ ì½˜í…ì¸ ë“¤ì„ ë¹„ì›€.
 		for (int i = 0; i < otA.contentM.size(); i++) {
 			String key;
-			if (otA.contentM.get(cIdList.get(i)).get("type").equals("¿µÈ­")) {
+			if (otA.contentM.get(cIdList.get(i)).get("type").equals("ì˜í™”")) {
 
 				key = cIdList.get(i);
 				Contents c = new Contents(otA, key);
@@ -82,18 +82,18 @@ public class OTT {
 
 		Collections.sort(contentList);
 
-		System.out.println("¿µÈ­ ÄÁÅÙÃ÷");
+		System.out.println("ì˜í™” ì»¨í…ì¸ ");
 		showContentsList();
 	}
 
-	//½Ã¸®Áî ÄÁÅÙÃ÷ ¸ñ·Ï
+	//ì‹œë¦¬ì¦ˆ ì»¨í…ì¸  ëª©ë¡
 	void seriesContents() {
 		setcList();
 
-		contentList.clear(); // contentList¿¡ ´ã±ä ÄÜÅÙÃ÷µéÀ» ºñ¿ò.
+		contentList.clear(); // contentListì— ë‹´ê¸´ ì½˜í…ì¸ ë“¤ì„ ë¹„ì›€.
 		for (int i = 0; i < otA.contentM.size(); i++) {
 			String key;
-			if (otA.contentM.get(cIdList.get(i)).get("type").equals("½Ã¸®Áî")) {
+			if (otA.contentM.get(cIdList.get(i)).get("type").equals("ì‹œë¦¬ì¦ˆ")) {
 
 				key = cIdList.get(i);
 				Contents c = new Contents(otA, key);
@@ -105,51 +105,51 @@ public class OTT {
 
 		Collections.sort(contentList);
 
-		System.out.println("½Ã¸®Áî ÄÁÅÙÃ÷");
+		System.out.println("ì‹œë¦¬ì¦ˆ ì»¨í…ì¸ ");
 		showContentsList();
 
 	}
 	
-	//°ü½É ÄÁÅÙÃ÷ ¸ñ·Ï 
+	//ê´€ì‹¬ ì»¨í…ì¸  ëª©ë¡ 
 	void favoriteContents() {
-		contentList.clear(); // contentList¿¡ ´ã±ä ÄÜÅÙÃ÷µéÀ» ºñ¿ò.
+		contentList.clear(); // contentListì— ë‹´ê¸´ ì½˜í…ì¸ ë“¤ì„ ë¹„ì›€.
 		for(int i=0; i<user.favorite.size();i++) {
 			String key;
-			key = user.favorite.get(i); //User Å¬·¡½º¿¡ ´ã±ä ÄÜÅÙÃ÷Id¸¦ ÇÏ³ª¾¿ °¡Á®¿È.
-			Contents c = new Contents(otA, key); // ÄÜÅÙÃ÷Id¸¦ ÅëÇØ ÄÜÅÙÃ÷ ÀÎ½ºÅÏ½º °¡Á®¿È.
+			key = user.favorite.get(i); //User í´ë˜ìŠ¤ì— ë‹´ê¸´ ì½˜í…ì¸ Idë¥¼ í•˜ë‚˜ì”© ê°€ì ¸ì˜´.
+			Contents c = new Contents(otA, key); // ì½˜í…ì¸ Idë¥¼ í†µí•´ ì½˜í…ì¸  ì¸ìŠ¤í„´ìŠ¤ ê°€ì ¸ì˜´.
 			
-			this.contentList.add(c); //¸®½ºÆ®¿¡ ÄÜÅÙÃ÷ ÀÎ½ºÅÏ½º¸¦ ÀúÀå
+			this.contentList.add(c); //ë¦¬ìŠ¤íŠ¸ì— ì½˜í…ì¸  ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì €ì¥
 		}
 		
 		Collections.sort(contentList);
 		
-		System.out.println("°ü½É¸ñ·Ï ÄÁÅÙÃ÷");
+		System.out.println("ê´€ì‹¬ëª©ë¡ ì»¨í…ì¸ ");
 		showContentsList();
 	}
 
-	//ÄÁÅÙÃ÷ ¹øÈ£ ÀÔ·Â ½Ã, ¼¼ºÎ³»¿ë º¸¿©ÁÜ. 
+	//ì»¨í…ì¸  ë²ˆí˜¸ ì…ë ¥ ì‹œ, ì„¸ë¶€ë‚´ìš© ë³´ì—¬ì¤Œ. 
 	Contents detailContent(int contentNum) {
 		this.contentNum = contentNum - 1;
 		Contents detailList = contentList.get(this.contentNum);
 
-		System.out.println("Á¦¸ñ: " + detailList.title);
-		System.out.println("ÁÙ°Å¸®: " + detailList.summary);
-		System.out.println("°¨µ¶: " + detailList.direc);
-		System.out.println("¿¬µµ: " + detailList.year);
-		System.out.println("Ãâ¿¬: " + detailList.cast);
+		System.out.println("ì œëª©: " + detailList.title);
+		System.out.println("ì¤„ê±°ë¦¬: " + detailList.summary);
+		System.out.println("ê°ë…: " + detailList.direc);
+		System.out.println("ì—°ë„: " + detailList.year);
+		System.out.println("ì¶œì—°: " + detailList.cast);
 		System.out.println(detailList.type);
-		System.out.println(0+". ÂòÇÏ±â");
+		System.out.println(0+". ì°œí•˜ê¸°");
 		System.out.println();
 		
 		
 
-		if (detailList.type.equals("¿µÈ­")) {
+		if (detailList.type.equals("ì˜í™”")) {
 
 			Movie m = new Movie(otA, detailList.cId);
 			m.setOnFavorite(user);
 			m.movieInfo();
 			return m;
-		} else if (detailList.type.equals("½Ã¸®Áî")) {
+		} else if (detailList.type.equals("ì‹œë¦¬ì¦ˆ")) {
 			Series s = new Series(otA, detailList.cId);
 			s.setOnFavorite(user);
 			s.seriesInfo();
